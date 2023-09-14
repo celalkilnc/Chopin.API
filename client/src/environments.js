@@ -1,0 +1,1 @@
+export const Service_Adress = "http://localhost:6666/";
