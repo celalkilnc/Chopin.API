@@ -12,7 +12,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Application\Models\Response\" />
+    <Folder Include="Application\Models\Request\" />
     <Folder Include="Controllers\" />
+    <Folder Include="Common\" />
   </ItemGroup>
 
 </Project>

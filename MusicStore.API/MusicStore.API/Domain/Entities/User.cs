@@ -10,6 +10,8 @@ namespace MusicStore.API.Domain.Entities
          
         public string Password { get; set; }
 
-        public UserStatusEnum   Status { get; set; }
+        public string PhoneNumber { get; set; }
+
+        public UserStatusEnum Status { get; set; }
     }
 }
