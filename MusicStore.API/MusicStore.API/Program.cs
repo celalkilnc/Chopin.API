@@ -13,6 +13,13 @@ builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
+app.Use(async (context, next) =>
+{
+    var req = context;
+    
+    await next.Invoke();
+});
+
 app.UseHttpsRedirection();
 
 app.UseAuthorization();

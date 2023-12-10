@@ -1,4 +1,7 @@
-﻿namespace MusicStore.API.Setup;
+﻿using Microsoft.EntityFrameworkCore;
+using MusicStore.API.Persistance;
+
+namespace MusicStore.API.Setup;
 
 public class Module
 {
@@ -11,6 +14,7 @@ public class Module
     
     public void Configure(IServiceCollection services)
     {
-        
+        services.AddDbContext<MusicStoreDbContext>(options => options
+            .UseNpgsql(_configuration["ConnectionStrings:Postgres"]), ServiceLifetime.Singleton);
     }
 }

@@ -11,10 +11,12 @@ namespace MusicStore.API.Domain.Entities
         public string Brand { get; set; }
 
         public double Price { get; set; }
-  
-        public InstrumentTypeEnum  Type { get; set; }
 
-        public InstrumentCategoryEnum Category { get; set; }
+        public  enmStockStatus? StockStatus { get; set; }
+
+        public enmInstrumentType  Type { get; set; }
+
+        public enmInstrumentCategory Category { get; set; }
 
         public string? Description { get; set; }
     }

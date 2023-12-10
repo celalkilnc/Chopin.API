@@ -1,6 +1,6 @@
 ﻿namespace MusicStore.API.Domain.Enumerations
 {
-    public enum InstrumentCategoryEnum
+    public enum enmInstrumentCategory
     {
         String = 0,
         Wind = 1,

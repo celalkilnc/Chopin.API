@@ -1,6 +1,6 @@
 ﻿namespace MusicStore.API.Domain.Enumerations
 {
-    public enum InstrumentTypeEnum
+    public enum enmInstrumentType
     {
         Guitar = 0,
         BassGuitar = 1,
