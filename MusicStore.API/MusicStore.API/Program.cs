@@ -15,8 +15,6 @@ var app = builder.Build();
 
 app.Use(async (context, next) =>
 {
-    var req = context;
-    
     await next.Invoke();
 });
 
@@ -26,4 +24,4 @@ app.UseAuthorization();
 
 app.MapControllers();
 
-app.Run();
+app.Run(); 

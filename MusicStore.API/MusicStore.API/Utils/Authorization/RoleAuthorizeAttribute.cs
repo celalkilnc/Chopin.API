@@ -6,8 +6,9 @@ namespace MusicStore.API.Utils.Authorization;
 [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method)]
 public class RoleAuthorizeAttribute : TypeFilterAttribute
 {
-    public RoleAuthorizeAttribute(Type type) : base(type)
+    public RoleAuthorizeAttribute(string roles) : base(typeof(RoleAuthorizeFilter))
     {
+        Arguments = new object[] { roles };
     }
 }
 
@@ -15,9 +16,11 @@ public class RoleAuthorizeFilter : IAuthorizationFilter
 {
     private readonly string[] _roles;
 
-    public RoleAuthorizeFilter(params string[] roles)
+    public RoleAuthorizeFilter(string roles)
     {
-        _roles = roles;
+        _roles =  roles.Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries)
+            .Select(role => role.Trim())
+            .ToArray();
     }
 
     public void OnAuthorization(AuthorizationFilterContext context)

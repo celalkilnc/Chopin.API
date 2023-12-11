@@ -41,3 +41,8 @@ C:\Users\ckili\source\repos\MusicStore\MusicStore.API\MusicStore.API\bin\Debug\n
 C:\Users\ckili\source\repos\MusicStore\MusicStore.API\MusicStore.API\bin\Debug\net7.0\Npgsql.dll
 C:\Users\ckili\source\repos\MusicStore\MusicStore.API\MusicStore.API\bin\Debug\net7.0\Npgsql.EntityFrameworkCore.PostgreSQL.dll
 C:\Users\ckili\source\repos\MusicStore\MusicStore.API\MusicStore.API\bin\Debug\net7.0\System.CodeDom.dll
+C:\Users\ckili\source\repos\MusicStore\MusicStore.API\MusicStore.API\bin\Debug\net7.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\ckili\source\repos\MusicStore\MusicStore.API\MusicStore.API\bin\Debug\net7.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\ckili\source\repos\MusicStore\MusicStore.API\MusicStore.API\bin\Debug\net7.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\ckili\source\repos\MusicStore\MusicStore.API\MusicStore.API\bin\Debug\net7.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\ckili\source\repos\MusicStore\MusicStore.API\MusicStore.API\bin\Debug\net7.0\System.IdentityModel.Tokens.Jwt.dll

@@ -23,7 +23,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Application\Models\Response\Authorization\" />
     <Folder Include="Migrations\" />
   </ItemGroup>
 
