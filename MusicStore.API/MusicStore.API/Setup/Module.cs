@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using MusicStore.API.Actions;
+using MusicStore.API.Actions.Product;
 using MusicStore.API.Persistance;
 using MusicStore.API.Persistance.Repositories;
 using MusicStore.API.Persistance.Repositories.Product;
@@ -26,6 +27,7 @@ public class Module
         services.AddSingleton<IProductRepository, ProductRepository>();
 
         services.AddSingleton<IUserService, UserAction>();
+        services.AddSingleton<IProductService, ProductAction>();
 
         #endregion
     }
