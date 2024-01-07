@@ -18,8 +18,7 @@ app.UseAuthentication();
 app.UseAuthorization();
 
 app.Use(async (context, next) =>
-{ 
-    var a = TokenService.FieldTokenModel(context);
+{
     await next.Invoke();
 });
 
