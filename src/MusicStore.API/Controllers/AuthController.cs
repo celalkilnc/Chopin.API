@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using MusicStore.API.Services;
+using MusicStore.Application.Attributes;
 using MusicStore.Application.Models.Request;
 using MusicStore.Application.Models.Response;
 using MusicStore.Application.Models.Response.Auth;
@@ -27,8 +28,15 @@ public class AuthController : Controller , IAuthService
     } 
 
     [HttpPost("Register")]
-    public async Task<BaseResponse> CustomerRegister(mdlCustomerRegisterRequest pRequest, IUserRepository? userRepository)
+    public async Task<BaseResponse> CustomerRegister(mdlRegisterRequest pRequest, IUserRepository? userRepository)
     {
         return await _authService.CustomerRegister(pRequest, _userRepository);
+    }
+
+    [HttpPost("AdminRegister")]
+    [JwtAuthorize("Admin")]
+    public async Task<BaseResponse> AdminRegister(mdlRegisterRequest pRequest, IUserRepository? userRepository)
+    {
+        return await _authService.AdminRegister(pRequest, _userRepository);
     }
 }

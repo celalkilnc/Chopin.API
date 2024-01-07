@@ -2,7 +2,7 @@
 
 namespace MusicStore.Application.Models.Request;
 
-public class mdlCustomerRegisterRequest : mdlBaseAuthRequest
+public class mdlRegisterRequest : mdlBaseAuthRequest
 {
     [JsonPropertyName("userName")]
     public string UserName { get; set; }

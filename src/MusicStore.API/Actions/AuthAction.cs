@@ -34,8 +34,9 @@ public class AuthAction : IAuthService
 
         try
         {
+            var key = _configuration["JWTSettings:SecretKey"];
             var user = userRepository.GetWhere(x => x.Email == pRequest.Email).FirstOrDefault();
-            var tokenRes = TokenService.GenerateToken(user, _configuration["JWTSettings:SecretKey"]);
+            var tokenRes = TokenService.GenerateToken(user, key, key);
 
             res.Body.Token = tokenRes.Token;
             res.Body.UserStatus = tokenRes.Status;
@@ -52,10 +53,21 @@ public class AuthAction : IAuthService
         return res;
     }
 
-    public async Task<BaseResponse> CustomerRegister(mdlCustomerRegisterRequest pRequest,
+    public async Task<BaseResponse> CustomerRegister(mdlRegisterRequest pRequest,
         IUserRepository userRepository)
     {
-        var validRes = AuthValidator.CustomerRegisterValidate(pRequest, userRepository);
+        return await Register(pRequest, userRepository, enmUserStatus.Customer);
+    }
+
+    public async Task<BaseResponse> AdminRegister(mdlRegisterRequest pRequest, IUserRepository? userRepository)
+    {
+        return await Register(pRequest, userRepository, enmUserStatus.Admin);
+    }
+
+    private async Task<BaseResponse> Register(mdlRegisterRequest pRequest,
+        IUserRepository userRepository, enmUserStatus role)
+    {
+        var validRes = AuthValidator.RegisterValidate(pRequest, userRepository);
 
         if (!validRes.Header.Success)
             return validRes;
@@ -67,12 +79,12 @@ public class AuthAction : IAuthService
             PhoneNumber = string.IsNullOrEmpty(pRequest.PhoneNumber) ? "0" : pRequest.PhoneNumber,
             Password = Encrypter.EncryptAES(pRequest.Password, _configuration["Encrypt:Key"],
                 _configuration["Encrypt:Iv"]),
-            Status = enmUserStatus.Customer,
+            Status = role,
             ID = Guid.NewGuid()
         });
         await userRepository.SaveAsync();
 
         return ClassFactory.BaseResponseFactory(
-            new() { isSuccess ? ResponseMessages.Successfuly : ResponseMessages.Failed }, isSuccess); 
+            new() { isSuccess ? ResponseMessages.Successfuly : ResponseMessages.Failed }, isSuccess);
     }
 }

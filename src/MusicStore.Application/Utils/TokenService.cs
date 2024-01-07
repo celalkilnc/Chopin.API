@@ -1,7 +1,9 @@
 ﻿using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
+using Microsoft.AspNetCore.Http;
 using Microsoft.IdentityModel.Tokens;
+using MusicStore.Application.Models.App;
 using MusicStore.Application.Models.App.Auth;
 using MusicStore.Domain.Entities;
 
@@ -9,61 +11,115 @@ namespace MusicStore.Application.Utils;
 
 public class TokenService
 {
-    public static mdlGeneratedToken GenerateToken(User user, string secretKey)
+    public static mdlGeneratedToken GenerateToken(User user, string secretKey, string issuer)
     {
-        var expTime = DateTime.UtcNow.AddHours(5);
+        var expire = DateTime.Now.AddHours(1);
         var role = Helper.GetEnumDescription(user.Status);
 
-        var tokenHandler = new JwtSecurityTokenHandler();
-
-        var claims = new List<Claim>
+        var claims = new[]
         {
-            new Claim(ClaimTypes.Email,user.Email),
             new Claim(ClaimTypes.Name, user.Name),
-            new Claim(ClaimTypes.Role, role) //role definition for the token
+            new Claim(ClaimTypes.Email, user.Email),
+            new Claim(ClaimTypes.Role, role),
         };
 
-        var token = tokenHandler.CreateToken(new SecurityTokenDescriptor
-        {
-            Subject = new ClaimsIdentity(claims),
-            Expires = expTime, // Token's time
-            SigningCredentials =
-                new SigningCredentials(new SymmetricSecurityKey(Convert.FromBase64String(secretKey)),
-                    SecurityAlgorithms.HmacSha256Signature)
-        });
+        var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(AppSetting.AppSetting.JwtSecretKey));
+        var credentials = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
 
-        return new mdlGeneratedToken()
+        var token = new JwtSecurityToken(
+            AppSetting.AppSetting.JwtIssuer,
+            AppSetting.AppSetting.JwtAudience,
+            claims,
+            expires: expire,
+            signingCredentials: credentials
+        );
+
+        return new()
         {
-            Token = tokenHandler.WriteToken(token),
+            Token = new JwtSecurityTokenHandler().WriteToken(token),
+            Expire = expire,
             Status = role,
-            Expire = expTime
         };
     }
 
-    public static ClaimsPrincipal DecryptJwtToken(string jwtToken, string secretKey)
+    public static ClaimsPrincipal ValidateToken(string token, string secretKey, string issuer)
     {
-        byte[] secretKeyBytes = Encoding.UTF8.GetBytes(secretKey);
+        var tokenHandler = new JwtSecurityTokenHandler();
+        var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(AppSetting.AppSetting.JwtSecretKey));
 
-        var tokenValidationParameters = new TokenValidationParameters
+        var validationParameters = new TokenValidationParameters
         {
-            ValidateIssuer = true,
-            ValidateAudience = true,
-            ValidateLifetime = true,
-            ValidateIssuerSigningKey = true,
-            IssuerSigningKey = new SymmetricSecurityKey(secretKeyBytes),
+            ValidIssuer = AppSetting.AppSetting.JwtIssuer,
+            ValidAudience = AppSetting.AppSetting.JwtAudience,
+            IssuerSigningKey = key,
         };
-
-        var handler = new JwtSecurityTokenHandler();
-        SecurityToken validatedToken;
 
         try
         {
-            return handler.ValidateToken(jwtToken, tokenValidationParameters, out validatedToken);
+            return tokenHandler.ValidateToken(token, validationParameters, out _);
         }
-        catch (SecurityTokenException ex)
+        catch
         {
-            Console.WriteLine($"Token parsing error: {ex.Message}");
             return null;
         }
+    }
+
+    public static ClaimsPrincipal GetPrincipal(string token)
+    {
+        var tokenHandler = new JwtSecurityTokenHandler();
+
+        try
+        {
+            var jwtToken = tokenHandler.ReadToken(token) as JwtSecurityToken;
+
+            if (jwtToken == null)
+                return null;
+
+            var validationParameters = new TokenValidationParameters
+            {
+                ValidIssuer = AppSetting.AppSetting.JwtIssuer,
+                ValidAudience = AppSetting.AppSetting.JwtAudience,
+                IssuerSigningKey =
+                    new SymmetricSecurityKey(Convert.FromBase64String(AppSetting.AppSetting.JwtSecretKey))
+            };
+
+            SecurityToken securityToken;
+            var principal = tokenHandler.ValidateToken(token, validationParameters, out securityToken);
+
+            return principal;
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Token decrypt error: {ex.Message}");
+            return null;
+        }
+    }
+
+    public static mdlTokenInfo FieldTokenModel(HttpContext context)
+    {
+        var token = context.Request.Headers["Authorization"].ToString().Replace("Bearer ", "");
+
+
+        if (!string.IsNullOrEmpty(token))
+        {
+            var tokenHandler = new JwtSecurityTokenHandler();
+            var tokenSlices = tokenHandler.ReadToken(token) as JwtSecurityToken;
+
+            if (tokenSlices != null)
+            {
+                var email = tokenSlices.Claims.FirstOrDefault(c =>
+                    c.Type == "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress")?.Value;
+                var name = tokenSlices.Claims
+                    .FirstOrDefault(c => c.Type == "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name")?.Value;
+
+                var res = new mdlTokenInfo() { Email = email, Name = name };
+                res.SetRoleStrToEnm(tokenSlices.Claims.FirstOrDefault(c =>
+                    c.Type == "http://schemas.microsoft.com/ws/2008/06/identity/claims/role")?.Value);
+
+                return res;
+            }
+        }
+
+        return null;
     }
 }

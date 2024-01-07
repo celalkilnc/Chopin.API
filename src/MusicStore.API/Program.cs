@@ -14,9 +14,12 @@ builder.Services.AddEndpointsApiExplorer();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
+app.UseAuthentication();
+app.UseAuthorization();
 
 app.Use(async (context, next) =>
 { 
+    var a = TokenService.FieldTokenModel(context);
     await next.Invoke();
 });
 

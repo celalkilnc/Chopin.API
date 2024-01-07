@@ -16,10 +16,11 @@ public class AuthValidator
 
         var user = userRepository.GetWhere(x => x.Email == pRequest.Email).FirstOrDefault();
 
-        if (user == null || Encrypter.EncryptAES(user.Password, configuration["Encrypt:Key"],
-                configuration["Encrypt:Iv"]) != pRequest.Password)
+        if (user == null || Encrypter.EncryptAES(pRequest.Password, configuration["Encrypt:Key"],
+                configuration["Encrypt:Iv"]) != user.Password)
         {
             res.Header.Messages.Add(ResponseMessages.UnvalidLogin);
+            res.Header.Success = false;
             return res;
         }
         
@@ -30,7 +31,7 @@ public class AuthValidator
         return res;
     }
 
-    public static BaseResponse CustomerRegisterValidate(mdlCustomerRegisterRequest pRequest,IUserRepository userRepository)
+    public static BaseResponse RegisterValidate(mdlRegisterRequest pRequest,IUserRepository userRepository)
     {
         var res = ClassFactory.BaseResponseFactory(true);
 

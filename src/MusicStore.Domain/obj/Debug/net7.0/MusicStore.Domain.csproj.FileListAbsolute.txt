@@ -10,3 +10,15 @@ C:\Users\ckili\RiderProjects\MusicStore.WebService\MusicStore.Domain\obj\Debug\n
 C:\Users\ckili\RiderProjects\MusicStore.WebService\MusicStore.Domain\obj\Debug\net7.0\refint\MusicStore.Domain.dll
 C:\Users\ckili\RiderProjects\MusicStore.WebService\MusicStore.Domain\obj\Debug\net7.0\MusicStore.Domain.pdb
 C:\Users\ckili\RiderProjects\MusicStore.WebService\MusicStore.Domain\obj\Debug\net7.0\ref\MusicStore.Domain.dll
+C:\Users\ckili\source\repos\MusicStore\src\MusicStore.Domain\bin\Debug\net7.0\MusicStore.Domain.deps.json
+C:\Users\ckili\source\repos\MusicStore\src\MusicStore.Domain\bin\Debug\net7.0\MusicStore.Domain.dll
+C:\Users\ckili\source\repos\MusicStore\src\MusicStore.Domain\bin\Debug\net7.0\MusicStore.Domain.pdb
+C:\Users\ckili\source\repos\MusicStore\src\MusicStore.Domain\obj\Debug\net7.0\MusicStore.Domain.csproj.AssemblyReference.cache
+C:\Users\ckili\source\repos\MusicStore\src\MusicStore.Domain\obj\Debug\net7.0\MusicStore.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ckili\source\repos\MusicStore\src\MusicStore.Domain\obj\Debug\net7.0\MusicStore.Domain.AssemblyInfoInputs.cache
+C:\Users\ckili\source\repos\MusicStore\src\MusicStore.Domain\obj\Debug\net7.0\MusicStore.Domain.AssemblyInfo.cs
+C:\Users\ckili\source\repos\MusicStore\src\MusicStore.Domain\obj\Debug\net7.0\MusicStore.Domain.csproj.CoreCompileInputs.cache
+C:\Users\ckili\source\repos\MusicStore\src\MusicStore.Domain\obj\Debug\net7.0\MusicStore.Domain.dll
+C:\Users\ckili\source\repos\MusicStore\src\MusicStore.Domain\obj\Debug\net7.0\refint\MusicStore.Domain.dll
+C:\Users\ckili\source\repos\MusicStore\src\MusicStore.Domain\obj\Debug\net7.0\MusicStore.Domain.pdb
+C:\Users\ckili\source\repos\MusicStore\src\MusicStore.Domain\obj\Debug\net7.0\ref\MusicStore.Domain.dll

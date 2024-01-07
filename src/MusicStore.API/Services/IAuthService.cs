@@ -9,5 +9,7 @@ public interface IAuthService
 {
      public Task<mdlAuthResponse> Authentication(mdlAuthenticationRequest pRequest, IUserRepository? userRepository);
 
-     public Task<BaseResponse> CustomerRegister(mdlCustomerRegisterRequest pRequest, IUserRepository? userRepository);
+     public Task<BaseResponse> CustomerRegister(mdlRegisterRequest pRequest, IUserRepository? userRepository);
+
+     public Task<BaseResponse> AdminRegister(mdlRegisterRequest pRequest, IUserRepository? userRepository);
 }
