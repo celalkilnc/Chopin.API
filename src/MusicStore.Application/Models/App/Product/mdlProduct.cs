@@ -28,4 +28,14 @@ public class mdlProduct : mdlBaseApp
 
     [JsonPropertyName("description")] 
     public string? Description { get; set; }
+
+    [JsonPropertyName("phtos")]
+    public List<mdlPhoto> Photos { get; set; }
+}
+
+public class mdlPhoto
+{
+    public Guid ProductId { get; set; }
+
+    public string PhotoURL { get; set; }
 }

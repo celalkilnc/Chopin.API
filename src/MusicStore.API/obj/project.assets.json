@@ -1807,11 +1807,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ckili\\RiderProjects\\MusicStore.WebService\\MusicStore.API\\MusicStore.API.csproj",
+      "projectUniqueName": "C:\\Users\\ckili\\source\\repos\\MusicStore\\src\\MusicStore.API\\MusicStore.API.csproj",
       "projectName": "MusicStore.API",
-      "projectPath": "C:\\Users\\ckili\\RiderProjects\\MusicStore.WebService\\MusicStore.API\\MusicStore.API.csproj",
+      "projectPath": "C:\\Users\\ckili\\source\\repos\\MusicStore\\src\\MusicStore.API\\MusicStore.API.csproj",
       "packagesPath": "C:\\Users\\ckili\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ckili\\RiderProjects\\MusicStore.WebService\\MusicStore.API\\obj\\",
+      "outputPath": "C:\\Users\\ckili\\source\\repos\\MusicStore\\src\\MusicStore.API\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\ckili\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -1830,8 +1830,8 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "C:\\Users\\ckili\\RiderProjects\\MusicStore.WebService\\MusicStore.Persistance\\MusicStore.Persistance.csproj": {
-              "projectPath": "C:\\Users\\ckili\\RiderProjects\\MusicStore.WebService\\MusicStore.Persistance\\MusicStore.Persistance.csproj"
+            "C:\\Users\\ckili\\source\\repos\\MusicStore\\src\\MusicStore.Persistance\\MusicStore.Persistance.csproj": {
+              "projectPath": "C:\\Users\\ckili\\source\\repos\\MusicStore\\src\\MusicStore.Persistance\\MusicStore.Persistance.csproj"
             }
           }
         }

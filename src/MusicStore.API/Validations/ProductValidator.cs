@@ -8,7 +8,7 @@ public class ProductValidator
 {
     public static BaseResponse AddProductValidate(mdlAddProductRequest pRequest)
     {
-        var res = ClassFactory.BaseResponseFactory();
+        var res = ClassFactory.BaseResponseFactory(true);
 
         if (res.Header.Messages.Count > 0)
             res.Header.Success = false;

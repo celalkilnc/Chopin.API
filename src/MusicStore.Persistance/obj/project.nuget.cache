@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "h4q2c57RKMOwO14dxCEVucZx4nKzWE10cg9+WUqgJ4nP9g3IuvwfTxZbgN3yAXHgmC18BwRAhZgoK4PR+nKdbw==",
+  "dgSpecHash": "ktN0Fh2sbrGSDyp3UXgLda5u+26eWtNUNLeq4dWsTtyrA6J5IRquI/NSJ2IBkouNR9F+2i01jqQ2VPWx2oIplg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\ckili\\RiderProjects\\MusicStore.WebService\\MusicStore.Persistance\\MusicStore.Persistance.csproj",
+  "projectFilePath": "C:\\Users\\ckili\\source\\repos\\MusicStore\\src\\MusicStore.Persistance\\MusicStore.Persistance.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ckili\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\ckili\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\7.0.14\\microsoft.aspnetcore.authentication.jwtbearer.7.0.14.nupkg.sha512",

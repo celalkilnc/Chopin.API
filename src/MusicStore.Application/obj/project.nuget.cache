@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "5o9Czp05/BMYeHTguvNYrzatmoe8MOiHN3t8syZoZZVe6ndwn4FUhL5avbozV2OuoJNMKd8JYMICzd4J4fCr2g==",
+  "dgSpecHash": "NH0xbI2c104iRLom8HD6RQk1ivQSZScWvC/PL1U+wQxHSA3p9ioNoXtNOXSG/cPfBdXhP6XVEz9kVQ6mW7iKTg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\ckili\\RiderProjects\\MusicStore.WebService\\MusicStore.Application\\MusicStore.Application.csproj",
+  "projectFilePath": "C:\\Users\\ckili\\source\\repos\\MusicStore\\src\\MusicStore.Application\\MusicStore.Application.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ckili\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\7.0.14\\microsoft.aspnetcore.authentication.jwtbearer.7.0.14.nupkg.sha512",
     "C:\\Users\\ckili\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\7.0.0\\microsoft.extensions.dependencyinjection.7.0.0.nupkg.sha512",

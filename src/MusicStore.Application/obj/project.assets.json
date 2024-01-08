@@ -427,11 +427,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ckili\\RiderProjects\\MusicStore.WebService\\MusicStore.Application\\MusicStore.Application.csproj",
+      "projectUniqueName": "C:\\Users\\ckili\\source\\repos\\MusicStore\\src\\MusicStore.Application\\MusicStore.Application.csproj",
       "projectName": "MusicStore.Application",
-      "projectPath": "C:\\Users\\ckili\\RiderProjects\\MusicStore.WebService\\MusicStore.Application\\MusicStore.Application.csproj",
+      "projectPath": "C:\\Users\\ckili\\source\\repos\\MusicStore\\src\\MusicStore.Application\\MusicStore.Application.csproj",
       "packagesPath": "C:\\Users\\ckili\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ckili\\RiderProjects\\MusicStore.WebService\\MusicStore.Application\\obj\\",
+      "outputPath": "C:\\Users\\ckili\\source\\repos\\MusicStore\\src\\MusicStore.Application\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\ckili\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -449,8 +449,8 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "C:\\Users\\ckili\\RiderProjects\\MusicStore.WebService\\MusicStore.Domain\\MusicStore.Domain.csproj": {
-              "projectPath": "C:\\Users\\ckili\\RiderProjects\\MusicStore.WebService\\MusicStore.Domain\\MusicStore.Domain.csproj"
+            "C:\\Users\\ckili\\source\\repos\\MusicStore\\src\\MusicStore.Domain\\MusicStore.Domain.csproj": {
+              "projectPath": "C:\\Users\\ckili\\source\\repos\\MusicStore\\src\\MusicStore.Domain\\MusicStore.Domain.csproj"
             }
           }
         }

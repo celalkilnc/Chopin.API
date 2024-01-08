@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ckili\\RiderProjects\\MusicStore.WebService\\MusicStore.Domain\\MusicStore.Domain.csproj",
+      "projectUniqueName": "C:\\Users\\ckili\\source\\repos\\MusicStore\\src\\MusicStore.Domain\\MusicStore.Domain.csproj",
       "projectName": "MusicStore.Domain",
-      "projectPath": "C:\\Users\\ckili\\RiderProjects\\MusicStore.WebService\\MusicStore.Domain\\MusicStore.Domain.csproj",
+      "projectPath": "C:\\Users\\ckili\\source\\repos\\MusicStore\\src\\MusicStore.Domain\\MusicStore.Domain.csproj",
       "packagesPath": "C:\\Users\\ckili\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ckili\\RiderProjects\\MusicStore.WebService\\MusicStore.Domain\\obj\\",
+      "outputPath": "C:\\Users\\ckili\\source\\repos\\MusicStore\\src\\MusicStore.Domain\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\ckili\\AppData\\Roaming\\NuGet\\NuGet.Config",

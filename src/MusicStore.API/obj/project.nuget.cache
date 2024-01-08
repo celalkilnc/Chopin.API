@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "tcW146lJdQw+RF89XDD2uEkBIgBrTjsD0mAlj3pLET6YUFStngm9UiODA61D4sMzN2fpXGP7Ocq6vYfmRaXA/g==",
+  "dgSpecHash": "mka9W5TsA4Khq0O2l5Sw/4slHzUfXfznbrb+kuFoXMvZVLEVFhLnqyq4oVZxNs71/wTy/PqhDBFqhERwB8ve3w==",
   "success": true,
-  "projectFilePath": "C:\\Users\\ckili\\RiderProjects\\MusicStore.WebService\\MusicStore.API\\MusicStore.API.csproj",
+  "projectFilePath": "C:\\Users\\ckili\\source\\repos\\MusicStore\\src\\MusicStore.API\\MusicStore.API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ckili\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\ckili\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\7.0.14\\microsoft.aspnetcore.authentication.jwtbearer.7.0.14.nupkg.sha512",

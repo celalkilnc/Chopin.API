@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "2OrVeFax/YaIrPmVc2VzQQgXKnVOubUaaplj/eE5e3J0Jp1r22n58pcBzmKFvHnf8s/f4FFTaQvAGyIe+C87eg==",
+  "dgSpecHash": "x8IusyoryYfJkJh6aseJCzpM929YIvKznpGJxKJpUeUPQVujlMAdNZQkR4yzaZmuTyHiZoKhkoSdfjRXbkG97Q==",
   "success": true,
-  "projectFilePath": "C:\\Users\\ckili\\RiderProjects\\MusicStore.WebService\\MusicStore.Domain\\MusicStore.Domain.csproj",
+  "projectFilePath": "C:\\Users\\ckili\\source\\repos\\MusicStore\\src\\MusicStore.Domain\\MusicStore.Domain.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
