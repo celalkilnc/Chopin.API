@@ -28,8 +28,7 @@ public class ProductController : Controller, IProductService
         _photoRepository = photoRepository;
     }
 
-    [HttpGet("GetProducts")]
-    [JwtAuthorize("")]
+    [HttpGet("GetProducts")] 
     public async Task<mdlGetProductResponse> GetProducts(mdlGetProductRequest pRequest,
         IProductRepository? productRepository, IPhotoRepository photoRepository)
     {
@@ -43,5 +42,12 @@ public class ProductController : Controller, IProductService
     {
         pRequest.FillTokenInfo(HttpContext);
         return await _productService.AddProduct(pRequest, _productRepository, _photoRepository);
+    }
+
+    [HttpGet("GetProductDetail")]
+    public async Task<mdlGetProductDetailResponse> GetProductDetail(mdlGetProductDetailRequest pRequest, IProductRepository productRepository,
+        IPhotoRepository photoRepository)
+    {
+        return await _productService.GetProductDetail(pRequest, _productRepository, _photoRepository);
     }
 }

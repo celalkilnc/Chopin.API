@@ -4,6 +4,7 @@ using MusicStore.Application.Models.Request;
 using MusicStore.Application.Models.Response;
 using MusicStore.Application.Models.Response.Auth;
 using MusicStore.Application.Utils;
+using MusicStore.Application.Utils.AppSetting;
 using MusicStore.Application.Validations;
 using MusicStore.Domain.Enumerations;
 using MusicStore.Persistance.Repositories.User;
@@ -23,7 +24,7 @@ public class AuthAction : IAuthService
         IUserRepository userRepository)
     {
         var validRes = AuthValidator.AuthValidate(pRequest, userRepository, _configuration);
-        var res = new mdlAuthResponse() { Body = new(), Header = new() { Messages = new() } };
+        var res = new mdlAuthResponse().Factory();
 
         if (!validRes.Header.Success)
         {
@@ -77,8 +78,8 @@ public class AuthAction : IAuthService
             Email = pRequest.Email,
             Name = pRequest.UserName,
             PhoneNumber = string.IsNullOrEmpty(pRequest.PhoneNumber) ? "0" : pRequest.PhoneNumber,
-            Password = Encrypter.EncryptAES(pRequest.Password, _configuration["Encrypt:Key"],
-                _configuration["Encrypt:Iv"]),
+            Password = Encrypter.EncryptAES(pRequest.Password, AppSetting.PassKey,
+                AppSetting.PassIv),
             Status = role,
             ID = Guid.NewGuid()
         });

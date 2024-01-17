@@ -18,4 +18,6 @@ public class AppSetting : IAppSetting
     public static string JwtSecretKey => Configuration["JWTSettings:SecretKey"];
     public static string JwtIssuer => Configuration["JWTSettings:Issuer"];
     public static string JwtAudience => Configuration["JWTSettings:Audience"];
+    public static string PassKey => Configuration["Encrypt:Key"];
+    public static string PassIv => Configuration["Encrypt:Iv"];
 }

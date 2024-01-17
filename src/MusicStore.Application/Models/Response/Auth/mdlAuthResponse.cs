@@ -7,6 +7,11 @@ public class mdlAuthResponse : BaseResponse
 {
     [JsonPropertyName("body")]
     public Body Body { get; set; }
+
+    public override mdlAuthResponse Factory(bool success = false)
+    {
+        return new() { Body = new(),Header = new(){Messages = new(),Success = success}};
+    }
 }
 
 public class Body

@@ -26,9 +26,14 @@ public class ResponseMessages
     {
         get { return "This mail was already taken."; }
     }
-    
+
     public static string UnvalidLogin
     {
         get { return "Invalid login info."; }
+    }
+    
+    public static string ProdNotFound
+    {
+        get { return "Product not found."; }
     }
 }

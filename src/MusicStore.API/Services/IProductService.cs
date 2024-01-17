@@ -10,4 +10,7 @@ public interface IProductService
    public Task<mdlGetProductResponse> GetProducts(mdlGetProductRequest pRequest, IProductRepository productRepository, IPhotoRepository photoRepository);
 
    public Task<mdlAddProductResponse> AddProduct(mdlAddProductRequest pRequest, IProductRepository productRepository, IPhotoRepository photoRepository);
+
+   public Task<mdlGetProductDetailResponse> GetProductDetail(mdlGetProductDetailRequest pRequest,
+      IProductRepository productRepository, IPhotoRepository photoRepository);
 }

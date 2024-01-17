@@ -6,6 +6,11 @@ public class BaseResponse
 {
     [JsonPropertyName("header")]
     public Header Header { get; set; }
+
+    public virtual BaseResponse Factory(bool success = false)
+    {
+        return new() { Header = new() { Messages = new(), Success = success } }; 
+    }
 }
 
 public class Header
