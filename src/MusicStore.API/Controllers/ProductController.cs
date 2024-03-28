@@ -28,7 +28,7 @@ public class ProductController : Controller, IProductService
         _photoRepository = photoRepository;
     }
 
-    [HttpGet("GetProducts")] 
+    [HttpGet("GetProducts")]
     public async Task<mdlGetProductResponse> GetProducts(mdlGetProductRequest pRequest,
         IProductRepository? productRepository, IPhotoRepository photoRepository)
     {
@@ -36,7 +36,6 @@ public class ProductController : Controller, IProductService
     }
 
     [HttpPost("AddProduct")]
-    [JwtAuthorize("Admin")]
     public async Task<mdlAddProductResponse> AddProduct(mdlAddProductRequest pRequest,
         IProductRepository? productRepository, IPhotoRepository photoRepository)
     {

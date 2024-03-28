@@ -6,6 +6,7 @@ using MusicStore.API.Actions;
 using MusicStore.API.Services; 
 using MusicStore.Application.Utils.AppSetting;
 using MusicStore.Persistance;
+using MusicStore.Persistance.Repositories.Basket;
 using MusicStore.Persistance.Repositories.Media;
 using MusicStore.Persistance.Repositories.Product;
 using MusicStore.Persistance.Repositories.User;
@@ -23,6 +24,18 @@ public class Module
 
     public void Configure(IServiceCollection services)
     {
+        services.AddHttpContextAccessor();
+        services.AddCors(options =>
+        {
+            options.AddPolicy(name: "allowAll",
+                policy =>
+                {
+                    policy.AllowAnyOrigin()
+                        .AllowAnyMethod()
+                        .AllowAnyHeader();
+                });
+        });
+        
         services.AddDbContext<MSDBContext>(options => options
             .UseNpgsql(_configuration["ConnectionStrings:Postgres"]), ServiceLifetime.Singleton);
         
@@ -40,7 +53,7 @@ public class Module
                     IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["JWTSettings:SecretKey"]))
                 };
             });
-        
+ 
         #region ..::Dependencies::..
 
         services.AddSingleton<IAppSetting,AppSetting>();
@@ -49,10 +62,12 @@ public class Module
         services.AddSingleton<IUserRepository, UserRepository>();
         services.AddSingleton<IProductRepository, ProductRepository>();
         services.AddSingleton<IPhotoRepository,PhotoRepository>();
+        services.AddSingleton<IBasketRepository,BasketRepository>();
 
         //Actions
         services.AddSingleton<IAuthService, AuthAction>();
         services.AddSingleton<IProductService,ProductAction>();
+        services.AddSingleton<IBasketService,BasketAction>();
 
         #endregion
     }

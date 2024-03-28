@@ -13,4 +13,4 @@ public interface IProductService
 
    public Task<mdlGetProductDetailResponse> GetProductDetail(mdlGetProductDetailRequest pRequest,
       IProductRepository productRepository, IPhotoRepository photoRepository);
-}
+} 

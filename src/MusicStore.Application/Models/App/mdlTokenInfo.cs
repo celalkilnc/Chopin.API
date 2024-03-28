@@ -1,4 +1,5 @@
-﻿using MusicStore.Domain.Enumerations;
+﻿using MusicStore.Domain.Entities;
+using MusicStore.Domain.Enumerations;
 
 namespace MusicStore.Application.Models.App;
 
@@ -9,6 +10,8 @@ public class mdlTokenInfo : mdlBaseApp
     public string Email { get; set; }
 
     public string Name { get; set; }
+
+    public User User { get; set; }
 
     public enmUserStatus Role
     {

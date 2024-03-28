@@ -22,6 +22,26 @@ namespace MusicStore.Persistance.Migrations
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
+            modelBuilder.Entity("MusicStore.Domain.Entities.Basket", b =>
+                {
+                    b.Property<Guid>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<Guid>("ProductId")
+                        .HasColumnType("uuid");
+
+                    b.Property<int>("ProductNum")
+                        .HasColumnType("integer");
+
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("uuid");
+
+                    b.HasKey("ID");
+
+                    b.ToTable("Baskets");
+                });
+
             modelBuilder.Entity("MusicStore.Domain.Entities.Photo", b =>
                 {
                     b.Property<Guid>("ID")

@@ -1,4 +1,5 @@
 using MusicStore.API.Setup;
+using MusicStore.Application.Models.Response.Product;
 using MusicStore.Application.Utils;
 
 var builder = WebApplication.CreateBuilder(args);

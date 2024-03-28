@@ -20,7 +20,7 @@ public class mdlProduct : mdlBaseApp
     [JsonPropertyName("description")] 
     public string? Description { get; set; }
  
-    [JsonPropertyName("phtos")]
+    [JsonPropertyName("photos")]
     public List<mdlPhoto>? Photos { get; set; } 
 }
 
